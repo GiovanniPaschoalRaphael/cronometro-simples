@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" type="image/png" href="./assets/stopwatch-icon.png"/>
+    <title>Cronômetro</title>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="stopwatch-header">
+            <h1>Cronômetro</h1>
+            <div class="page-mode-buttons" id="page-mode-buttons">
+                <img src="./assets/light-mode.png" alt="light-mode" class="button-mode button-mode-active">
+                <img src="./assets/dark-mode.png" alt="dark-mode" class="button-mode">
+            </div>    
+        </header>
+
+        <section class="stopwatch-display">
+            <div class="stopwatch-display-container">
+                <div class="stopwatch-display-time">
+                    <span id="hours">00</span>
+                    <span class="splitter">:</span>
+                    <span id="minutes">00</span>
+                    <span class="splitter">:</span>
+                    <span id="seconds">00</span>
+                    <span class="splitter">.</span>
+                    <span class="smaller" id="milliseconds">00</span>
+                </div>    
+            </div>
+        </section>
+
+        <section class="stopwatch-controls">
+            <input type="button" value="iniciar" class="button-action" id="start-pause">
+            <input type="button" value="resetar" class="button-action" id="reset-lap">
+        </section>
+
+        <section class="stopwatch-laps" id="stopwatch-laps">
+            <table class="stopwatch-laps-info">
+                <thead id="lap-info-head">
+                    <tr>
+                        <th>Voltas</th>
+                        <th>Tempo das Voltas</th>
+                        <th>Tempo Geral</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="lap-info-body">
+                    
+                </tbody>
+            </table>
+        </section>
+        
+    </main>
+    
+    <script src="./scripts/darkmode.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>

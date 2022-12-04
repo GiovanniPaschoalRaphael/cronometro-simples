@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root{
+    --main-elements-size: 20px;
+
+    --background-color: #e7eff8;
+
+    --first-elements-color: #314264;
+    --second-elements-color: #b6bfd1;
+
+    --first-shadow-color: #ffffff;
+    --second-shadow-color: #9AB0CF;
+
+    --first-buttons-color: #00C853;
+    --second-buttons-color: #C62828;
+}
+
+.dark-mode{
+    --background-color: #0c0d0d;
+
+    --first-elements-color: #8f8f8f;
+    --second-elements-color: #4f4f4f;
+
+    --first-shadow-color: #292a2b;
+    --second-shadow-color: #000000;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    font-family: 'Comfortaa', cursive;
+    font-size: var(--main-elements-size);
+}
+
+main.container{
+    width: 100%;
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main.container section{
+    width: 100%;
+    max-width: 23em;
+    margin: 1.5em 0;
+}
+
+header.stopwatch-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.stopwatch-header h1{
+    color: var(--first-elements-color);
+    font-weight: 500;
+    font-size: 2.5em;
+    text-transform: capitalize;
+}
+
+header.stopwatch-header .page-mode-buttons{
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    overflow: hidden;  
+    border-radius: 50%;
+    box-shadow: -2px -2px 5px 0px var(--first-shadow-color), 2px 2px 5px 0px var(--second-shadow-color);
+    cursor: pointer;  
+}  
+
+header.stopwatch-header .page-mode-buttons img.button-mode{
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: -80%;
+    opacity: 0;
+    transition: transform 0.6s ease-out, top 0.4s;
+}
+
+header.stopwatch-header .page-mode-buttons img.button-mode-active{
+    top: 80%;
+    transform: translateY(-100%);
+    opacity: 1;
+}
+
+section.stopwatch-display .stopwatch-display-container{
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: -5px -5px 10px 0px var(--first-shadow-color), 5px 5px 10px 0px var(--second-shadow-color);
+}   
+
+section.stopwatch-display .stopwatch-display-time{
+    display: flex;
+    align-items: baseline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+section.stopwatch-display .stopwatch-display-time span{
+    font-size: 3em;
+    font-weight: 300;
+    color: var(--first-elements-color);
+    text-align: center;
+}
+
+section.stopwatch-display .stopwatch-display-time span:not(.splitter){
+    width: 1.3em;
+}
+
+section.stopwatch-display .stopwatch-display-time span.smaller{
+    font-size: 1.5em;
+}
+
+section.stopwatch-controls{
+    padding: 0 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+section.stopwatch-controls input.button-action{
+    width: 100%;
+    padding: 1.2em;
+    border: 0;
+    border-radius: 15px;
+    background-color: var(--background-color);
+    color: var(--first-elements-color);
+    text-transform: capitalize;
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    box-shadow: -2px -2px 5px 0px var(--first-shadow-color), 2px 2px 5px 0px var(--second-shadow-color);
+    transition: color 0.3s, letter-spacing 0.3s;
+    cursor: pointer;
+}
+
+section.stopwatch-controls input.button-action:hover{
+    letter-spacing: 0.3em;
+}
+
+section.stopwatch-controls input.button-action[value="iniciar"]{
+    color: var(--first-buttons-color);
+}
+
+section.stopwatch-controls input.button-action[value="resetar"]{
+    color: var(--second-buttons-color);
+}
+
+header.stopwatch-header .page-mode-buttons:active,
+section.stopwatch-controls input.button-action:active{
+    outline: 0;
+    box-shadow: -2px -2px 5px 0px var(--second-shadow-color), 2px 2px 5px 0px var(--first-shadow-color);
+}
+
+section.stopwatch-laps{
+    max-height: 10em;
+    padding: 0 1em;
+    overflow-y: auto;
+    display: none;
+    scroll-behavior: smooth;
+}
+
+section.stopwatch-laps-active{
+    display: block;
+}
+
+table.stopwatch-laps-info{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+table.stopwatch-laps-info thead th{
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    border-bottom: 0.2em solid var(--first-elements-color);
+    text-transform: capitalize;
+} 
+
+table.stopwatch-laps-info thead th,
+table.stopwatch-laps-info tbody tr td:nth-of-type(1){
+    color: var(--first-elements-color);
+}  
+
+table.stopwatch-laps-info tbody tr td{
+    color: var(--second-elements-color);
+}
+
+table.stopwatch-laps-info thead tr th,
+table.stopwatch-laps-info tbody tr td{
+    padding: 0.8em 0;
+}
+
+@media screen and (min-width: 720px){
+    section.stopwatch-laps::-webkit-scrollbar{
+        width: 0.2em;
+        background-color: var(--second-elements-color);
+     }
+     
+    section.stopwatch-laps::-webkit-scrollbar-thumb{
+         border-radius: 30px;
+         background-color: var(--first-elements-color);
+    }
+
+    section.stopwatch-controls input.button-action{
+        color: var(--second-elements-color);
+    }
+
+    section.stopwatch-controls input.button-action[value="pausar"]:hover,
+    section.stopwatch-controls input.button-action[value="volta"]:hover{
+        color: var(--first-elements-color);
+    }
+}
+
+@media screen and (max-width: 720px){
+    :root{
+        --main-elements-size: 12px;
+    }
+
+    section.stopwatch-laps{
+        max-height: 20em;
+    }
+}
+
+@media screen and (max-width: 290px){
+    :root{
+        --main-elements-size: 6px;
+    }
+}
