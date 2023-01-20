@@ -24,3 +24,6 @@ pronto o sistema está no servidor local <br>
 
 ![image](https://user-images.githubusercontent.com/55327081/213805901-a54a2257-dcf3-4d31-8243-46589dfb9e53.png)
 ![image](https://user-images.githubusercontent.com/55327081/213805940-a1faaea6-1b73-4661-bb6b-1980030c58d9.png)
+
+
+para acessar o projeto acesse o caminho na barra de pesquisa do seu navegador http://localhost/cronometro/
