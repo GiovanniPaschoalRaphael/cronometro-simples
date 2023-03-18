@@ -16,7 +16,8 @@ PARA O XAMPP <br>
 4°tire os arquivos do winrar deste projeto dentro da pasta htdocs
 pronto o sistema está no servidor local  <br> 
 
-PARA O WAMP Antes de tudo abra o wamp e ligue todos os serviços 1°Abra a pasta (c:) <br>
+PARA O WAMP Antes de tudo abra o wamp e ligue todos os serviços <br>
+1°Abra a pasta (c:) <br>
 2°Abra a pasta wamp64 <br>
 3°Abra a pasta wwww <br>
 4°tire os arquivos do winrar deste projeto dentro da pasta wwww <br>
